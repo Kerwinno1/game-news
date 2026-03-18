@@ -1,0 +1,11 @@
+name: 自动巡视机器人
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 模拟访问
+        run: curl -s https://www.gamersky.com/rss/news.xml
